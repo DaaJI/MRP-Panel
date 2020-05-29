@@ -33,7 +33,7 @@ script:
   - sudo chown -R www-data:www-data $TRAVIS_BUILD_DIR
 
 addons:
-  ssh_known_hosts: 47.240.80.51
+  ssh_known_hosts: 47.240.80.51:60022
 
 after_success:
   - ssh -p 60022 root@47.240.80.51 "cd /www/wwwroot/MRP-Panel && git pull https://github.com/zhuzai123/MRP-Panel.git"
