@@ -31,16 +31,11 @@
       "App\\": "app/"
     }
   },
-  "authors": [
-    {
-      "name": "ZZZ",
-      "email": "hehouzhu@gmail.com",
-      "role": "Developer"
-    },
-    {
-      "name": "DaJI",
-      "role": "Developer"
-    }
-  ],
-  "license": "GPL-3.0-or-later"
+  "config": {
+    "secure-http": false
+  },
+  "minimum-stability": "dev",
+  "require-dev": {
+    "khanamiryan/qrcode-detector-decoder": "*"
+  }
 }
