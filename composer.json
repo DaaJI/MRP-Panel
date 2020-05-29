@@ -30,13 +30,5 @@
     "psr-4": {
       "App\\": "app/"
     }
-  },
-
- "config": {
-        "secure-http": false
- },
- "minimum-stability": "dev",
-  "require-dev": {
-    "khanamiryan/qrcode-detector-decoder": "*"
   }
 }
