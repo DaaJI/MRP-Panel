@@ -1,13 +1,13 @@
 language: php
 php:
-  - 7.3
+  - 7.2
 sudo: enabled
 dist: xenial
 addons:
   hosts:
     - sspanel.test
 before_install:
-  - sudo apt-get install -y php7.3 nginx dash bash curl
+  - sudo apt-get install -y nginx dash bash curl
 
   - sudo cat /etc/nginx/nginx.conf
   - sudo ls /etc/nginx/sites-enabled/
