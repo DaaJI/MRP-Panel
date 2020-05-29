@@ -350,4 +350,3 @@ MigrationBackup/
 .ionide/
 
 vendor/
-id_rsa.enc
