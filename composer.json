@@ -1,10 +1,10 @@
 {
   "require": {
     "slim/slim": "~3.0",
-    "slim/csrf": "*",
+    "slim/csrf": "~1.0.0",
     "smarty/smarty": "3.*",
     "predis/predis": "~1.0",
-    "phpmailer/phpmailer": "6.1.6",
+    "phpmailer/phpmailer": "~6.1.6",
     "zeuxisoo/slim-whoops": "0.5.*",
     "firebase/php-jwt": "~3.0",
     "gregwar/captcha": "1.*",
@@ -15,12 +15,12 @@
     "illuminate/pagination": "5.2.*",
     "illuminate/database": "5.2.*",
     "esdeathlove/datatables": "^1.6",
-    "slim/twig-view": "1.2.0",
+    "slim/twig-view": "~1.2.0",
     "ramsey/uuid": "^3.0@dev",
     "chen-see/chen-pay": "^1.0@dev",
     "league/omnipay": "^3",
-    "lokielse/omnipay-alipay": "*",
-    "laravel-discord/yasmin": "*",
+    "lokielse/omnipay-alipay": "~3.1.2",
+    "laravel-discord/yasmin": "~0.8.2",
     "phpoffice/phpspreadsheet": "^1.12"
   },
   "autoload": {
@@ -30,5 +30,17 @@
     "psr-4": {
       "App\\": "app/"
     }
-  }
+  },
+  "authors": [
+    {
+      "name": "ZZZ",
+      "email": "hehouzhu@gmail.com",
+      "role": "Developer"
+    },
+    {
+      "name": "DaJI",
+      "role": "Developer"
+    }
+  ]
+  "license": "GPL-3.0-or-later"
 }
