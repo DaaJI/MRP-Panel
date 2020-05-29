@@ -29,7 +29,7 @@ $System_Config['db_password'] = 'hEJtZXKG2mZzJkPz';						//用户名对应的密
 
 
 //邮件设置--------------------------------------------------------------------------------------------
-$System_Config['mailDriver'] = 'none';	//发送邮件方式：none / mailgun / smtp / sendgrid
+$System_Config['mailDriver'] = 'none';	//发送邮件方式：none / smtp 
 $System_Config['sendPageLimit']= 50;	//发信分页 解决大站发公告超时问题
 
 # mailgun
