@@ -1,14 +1,12 @@
 language: php
+
 php:
   - 7.2
+
 sudo: enabled
-dist: xenial
-addons:
-  hosts:
-    - mrp.test
+
 before_install:
   - sudo apt-get install -y nginx dash bash curl
-
   - sudo cat /etc/nginx/nginx.conf
   - sudo ls /etc/nginx/sites-enabled/
   - sudo ls /etc/nginx/sites-available/
@@ -19,20 +17,13 @@ before_install:
   - sudo ls /etc/nginx/sites-enabled/
   - sudo ls /etc/nginx/sites-available/
   - sudo cat /etc/nginx/sites-enabled/mrp.test.conf
+
 install:
-  # Make composer download 10x faseter
   # - composer global require hirak/prestissimo
   - composer install
 
 script:
   - sudo chmod -R 755 *
-  - arrcookie=($(php xcat getCookie 1 | sed 's| |\n|g'))
-  # - sudo service php7.2 restart
   - sudo nginx -c /etc/nginx/nginx.conf
   - sudo chmod -R 777 $TRAVIS_BUILD_DIR
   - sudo chown -R www-data:www-data $TRAVIS_BUILD_DIR
-
-cache:
-  directories:
-    - uim-index-dev/node_modules
-    - $HOME/.composer/cache/files
