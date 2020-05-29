@@ -36,4 +36,4 @@ addons:
   ssh_known_hosts: 47.240.80.51
 
 after_success:
-  - ssh root@47.240.86.41 "cd /www/wwwroot/MRP-Panel && git pull https://github.com/zhuzai123/MRP-Panel.git"
+  - ssh root@47.240.86.41:60022 "cd /www/wwwroot/MRP-Panel && git pull https://github.com/zhuzai123/MRP-Panel.git"
