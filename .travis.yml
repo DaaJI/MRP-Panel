@@ -25,7 +25,6 @@ before_install:
   - sudo cat /etc/nginx/sites-enabled/mrp.test.conf
 
 install:
-  # - composer global require hirak/prestissimo
   - composer install
 
 script:
