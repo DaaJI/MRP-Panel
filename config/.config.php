@@ -23,8 +23,8 @@ $System_Config['subUrl'] = $System_Config['baseUrl'].'/link/';	//订阅地址，
 $System_Config['muKey'] = 'default_mu_key';								//用于校验魔改后端请求，可以随意修改，但请保持前后端一致，否则节点不能工作！
 $System_Config['db_driver'] = 'mysql';							//数据库程序
 $System_Config['db_host'] = 'localhost';						//数据库地址
-$System_Config['db_database'] = 'xykt';						//数据库名
-$System_Config['db_username'] = 'xykt';							//数据库用户名
+$System_Config['db_database'] = 'mrp.test';						//数据库名
+$System_Config['db_username'] = 'mrp.test';							//数据库用户名
 $System_Config['db_password'] = 'hEJtZXKG2mZzJkPz';						//用户名对应的密码
 
 
