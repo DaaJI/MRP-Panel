@@ -5,6 +5,10 @@ php:
 
 sudo: enabled
 
+branches:
+  only:
+    - master
+
 before_install:
   - sudo apt-get install -y nginx dash bash curl
   - sudo cat /etc/nginx/nginx.conf
