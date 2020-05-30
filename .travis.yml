@@ -27,6 +27,6 @@ script:
 - sudo chmod -R 755 *
 - sudo nginx -c /etc/nginx/nginx.conf
 - sudo chmod -R 777 $TRAVIS_BUILD_DIR
-- sudo chown -R www-data:www-data $TRAVIS_BUILD_DIR
+- sudo chown -R www:www $TRAVIS_BUILD_DIR
 # after_success:
 # - ssh -o StrictHostKeyChecking=no -p $hk1_ssh_port root@$hk1_ssh_host "cd /www/wwwroot/MRP-Panel && git pull https://github.com/zhuzai123/MRP-Panel.git && composer install"
