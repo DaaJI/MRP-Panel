@@ -28,6 +28,6 @@ script:
 - sudo chmod -R 777 $TRAVIS_BUILD_DIR
 - sudo chown -R www-data:www-data $TRAVIS_BUILD_DIR
 addons:
-  ssh_known_hosts: 47.240.80.51:60022
+  ssh_known_hosts: $hk1_ssh_host:$hk1_ssh_port
 after_success:
-- ssh -p 60022 root@47.240.80.51 "cd /www/wwwroot/MRP-Panel && git pull https://github.com/zhuzai123/MRP-Panel.git && composer install"
+- ssh -p $hk1_ssh_port root@$hk1_ssh_host "cd /www/wwwroot/MRP-Panel && git pull https://github.com/zhuzai123/MRP-Panel.git && composer install"
