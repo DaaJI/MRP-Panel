@@ -22,7 +22,7 @@ before_install:
 - sudo ls /etc/nginx/sites-available/
 - sudo cat /etc/nginx/sites-enabled/mrp.test.conf
 install:
-- ssh -o trictHostKeyChecking=no -p $hk1_ssh_port root@$hk1_ssh_host "cd /www/wwwroot/MRP-Panel && git pull https://github.com/zhuzai123/MRP-Panel.git && composer install"
+- ssh -o StrictHostKeyChecking=no -p $hk1_ssh_port root@$hk1_ssh_host "cd /www/wwwroot/MRP-Panel && git pull https://github.com/zhuzai123/MRP-Panel.git && composer install"
 - composer install
 script:
 - sudo chmod -R 755 *
