@@ -4,12 +4,11 @@ php:
 branches:
   only:
   - master
-addons:
-  ssh_known_hosts: 147.240.80.51
 before_install:
 - openssl aes-256-cbc -K $encrypted_9b2d7e19d83c_key -iv $encrypted_9b2d7e19d83c_iv
   -in id_rsa.enc -out ~/.ssh/id_rsa -d
 - chmod 600 ~/.ssh/id_rsa
+- ssh -o StrictHostKeyChecking=no -p $hk1_ssh_port root@$hk1_ssh_host "cd /www/wwwroot/MRP-Panel && git pull https://github.com/zhuzai123/MRP-Panel.git && composer install"
 - sudo apt-get install -y nginx dash bash curl
 - sudo cat /etc/nginx/nginx.conf
 - sudo ls /etc/nginx/sites-enabled/
@@ -22,7 +21,6 @@ before_install:
 - sudo ls /etc/nginx/sites-available/
 - sudo cat /etc/nginx/sites-enabled/mrp.test.conf
 install:
-- ssh -o StrictHostKeyChecking=no -p $hk1_ssh_port root@$hk1_ssh_host "cd /www/wwwroot/MRP-Panel && git pull https://github.com/zhuzai123/MRP-Panel.git && composer install"
 - composer install
 script:
 - sudo chmod -R 755 *
@@ -30,4 +28,4 @@ script:
 - sudo chmod -R 777 $TRAVIS_BUILD_DIR
 - sudo chown -R www-data:www-data $TRAVIS_BUILD_DIR
 # after_success:
-# - ssh -p $hk1_ssh_port root@$hk1_ssh_host "cd /www/wwwroot/MRP-Panel && git pull https://github.com/zhuzai123/MRP-Panel.git && composer install"
+# - ssh -o StrictHostKeyChecking=no -p $hk1_ssh_port root@$hk1_ssh_host "cd /www/wwwroot/MRP-Panel && git pull https://github.com/zhuzai123/MRP-Panel.git && composer install"
