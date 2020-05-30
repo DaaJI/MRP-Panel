@@ -5,6 +5,8 @@ sudo: enabled
 branches:
   only:
   - master
+addons:
+  ssh_known_hosts: $hk1_ssh_host:$hk1_ssh_port
 before_install:
 - openssl aes-256-cbc -K $encrypted_9b2d7e19d83c_key -iv $encrypted_9b2d7e19d83c_iv
   -in id_rsa.enc -out ~/.ssh/id_rsa -d
@@ -21,13 +23,12 @@ before_install:
 - sudo ls /etc/nginx/sites-available/
 - sudo cat /etc/nginx/sites-enabled/mrp.test.conf
 install:
+- ssh -p $hk1_ssh_port root@$hk1_ssh_host "cd /www/wwwroot/MRP-Panel && git pull https://github.com/zhuzai123/MRP-Panel.git && composer install"
 - composer install
 script:
 - sudo chmod -R 755 *
 - sudo nginx -c /etc/nginx/nginx.conf
 - sudo chmod -R 777 $TRAVIS_BUILD_DIR
 - sudo chown -R www-data:www-data $TRAVIS_BUILD_DIR
-addons:
-  ssh_known_hosts: $hk1_ssh_host:$hk1_ssh_port
-after_success:
-- ssh -p $hk1_ssh_port root@$hk1_ssh_host "cd /www/wwwroot/MRP-Panel && git pull https://github.com/zhuzai123/MRP-Panel.git && composer install"
+# after_success:
+# - ssh -p $hk1_ssh_port root@$hk1_ssh_host "cd /www/wwwroot/MRP-Panel && git pull https://github.com/zhuzai123/MRP-Panel.git && composer install"
