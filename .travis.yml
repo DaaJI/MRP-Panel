@@ -4,12 +4,12 @@ php:
 branches:
   only:
   - master
-  - dev
+#  - dev
 before_install:
 - openssl aes-256-cbc -K $encrypted_9b2d7e19d83c_key -iv $encrypted_9b2d7e19d83c_iv
   -in id_rsa.enc -out ~/.ssh/id_rsa -d
 - chmod 600 ~/.ssh/id_rsa
-- ssh -o StrictHostKeyChecking=no -p $hk1_ssh_port root@$hk1_ssh_host "cd /www/wwwroot/MRP-Panel && git pull https://github.com/zhuzai123/MRP-Panel.git && composer install"
+- ssh -o StrictHostKeyChecking=no -p $hk1_ssh_port root@$hk1_ssh_host "cd /www/wwwroot/MRP-Panel && git pull origin dev"
 - sudo apt-get install -y nginx dash bash curl
 - sudo cat /etc/nginx/nginx.conf
 - sudo ls /etc/nginx/sites-enabled/
